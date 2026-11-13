@@ -94,9 +94,11 @@ h1,h2,h3{font-family:"Playfair Display",serif;font-weight:500}.hero h1,.page-her
 .footer-links-col a:hover{color:var(--gold)}
 .socials{display:flex;gap:12px;margin-top:8px}
 .socials span{width:36px;height:36px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink)}
+.socials a{width:36px;height:36px;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink)}
 .socials svg{width:17px;height:17px;fill:currentColor}
 .socials .instagram-icon{fill:none;stroke:currentColor;stroke-width:1.8}
 .socials a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.socials a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .footer-bottom{padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:15px;font-size:10px;color:var(--muted);flex-wrap:wrap}
 .footer-bottom .footer-links{display:flex;gap:18px}
 .faq-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:7%;align-items:start}
@@ -149,6 +151,9 @@ h1,h2,h3{font-family:"Playfair Display",serif;font-weight:500}.hero h1,.page-her
 		contactPage.id = 'contact';
 		contactPage.className = 'page';
 		contactPage.innerHTML = '<div class="page-hero"><p class="eyebrow">WE ARE HERE TO HELP</p><h1>Contact <em>us.</em></h1><p>Visit Bilal Shoes in North Karachi or get in touch on WhatsApp.</p></div><section class="section contact-layout"><div class="contact-info"><p class="eyebrow">VISIT OUR STORE</p><h2>Find us in <em>Karachi.</em></h2><div class="contact-item"><span>ADDRESS</span><p>Anarkali Flate, Nagan Chowrangi, North Karachi</p></div><div class="contact-item"><span>PHONE / WHATSAPP</span><p><a href="https://wa.me/923142970073" target="_blank" rel="noopener noreferrer">+92 314 2970073</a></p></div><div class="contact-item"><span>EMAIL</span><p class="muted">Coming soon</p></div></div><div><p class="eyebrow">BILAL SHOES</p><h2>We would be glad to help you find your fit.</h2><p class="muted">For product availability and sizing, message us on WhatsApp.</p><a class="btn" href="https://wa.me/923142970073" target="_blank" rel="noopener noreferrer">Message us on WhatsApp ↗</a></div></section><div class="map"><iframe src="https://maps.google.com/maps?q=Anarkali%20Flate%2C%20Nagan%20Chowrangi%2C%20North%20Karachi&z=15&output=embed" title="Bilal Shoes location at Anarkali Flate, Nagan Chowrangi, North Karachi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>';
+		const email = contactPage.querySelector('.contact-item p.muted');
+		email.classList.remove('muted');
+		email.innerHTML = '<a href="mailto:hghouri414@gmail.com">hghouri414@gmail.com</a>';
 		document.querySelector('main').appendChild(contactPage);
 	}
 
@@ -158,6 +163,23 @@ h1,h2,h3{font-family:"Playfair Display",serif;font-weight:500}.hero h1,.page-her
 		const footer = document.createElement('footer');
 		footer.className = 'footer';
 		footer.innerHTML = `<div class="footer-top"><div class="footer-brand"><a class="brand" href="#home" onclick="return showPage('home')"><span class="mark">B</span><span>BILAL <b>SHOES</b><small>WALK WITH CONFIDENCE</small></span></a><p>Comfortable everyday footwear for men and boys in North Karachi.</p><div class="socials" aria-label="Social media, coming soon"><span role="img" aria-label="Facebook, coming soon" title="Facebook — coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4z"/></svg></span><span role="img" aria-label="Instagram, coming soon" title="Instagram — coming soon"><svg class="instagram-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg></span><span role="img" aria-label="TikTok, coming soon" title="TikTok — coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 8.3a7.3 7.3 0 0 1-4.3-1.4v7.2a5.8 5.8 0 1 1-5-5.7v3.7a2.2 2.2 0 1 0 1.5 2.1V2.5h3.5c.2 2 1.8 3.6 4.3 3.8v2z"/></svg></span></div></div><div class="footer-links-col"><h4>Explore</h4><a href="#home" onclick="return showPage('home')">Home</a><a href="#about" onclick="return showPage('about')">About us</a><a href="#collections" onclick="return showPage('collections')">Our collections</a></div><div class="footer-links-col"><h4>Visit us</h4><a href="#contact" onclick="return showPage('contact')">Anarkali Flate, Nagan Chowrangi</a><a href="https://wa.me/923142970073" target="_blank" rel="noopener noreferrer">+92 314 2970073</a></div><div class="footer-links-col"><h4>Need a hand?</h4><p class="muted">Ask us about sizes, prices and product availability.</p><a href="https://wa.me/923142970073" target="_blank" rel="noopener noreferrer">Message us on WhatsApp ↗</a></div></div><div class="footer-bottom"><span>© ${new Date().getFullYear()} Bilal Shoes. All rights reserved.</span><div class="footer-links"><a href="#contact" onclick="return showPage('contact')">Contact us</a></div></div>`;
+		const socialLinks = [
+			{ href: 'https://www.facebook.com/share/1HXDenzUGE/?mibextid=wwXIfr', label: 'Facebook' },
+			{ href: 'https://www.instagram.com/bilal.ghori.1291?exln=MTIyaHh4OGZ3YWRxdw%3D%3D&utm_source=qr', label: 'Instagram' },
+			{ href: 'https://www.tiktok.com/@bilalshoes123?_r=1&_t=ZS-9BLcXJgwNOb', label: 'TikTok' }
+		];
+		const socials = footer.querySelector('.socials');
+		socials.setAttribute('aria-label', 'Social media');
+		socials.querySelectorAll('span').forEach(function (icon, index) {
+			const link = document.createElement('a');
+			link.href = socialLinks[index].href;
+			link.target = '_blank';
+			link.rel = 'noopener noreferrer';
+			link.setAttribute('aria-label', socialLinks[index].label);
+			link.title = socialLinks[index].label;
+			link.appendChild(icon.querySelector('svg'));
+			icon.replaceWith(link);
+		});
 		document.body.appendChild(footer);
 	}
 
