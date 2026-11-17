@@ -151,6 +151,10 @@ h1,h2,h3{font-family:"Playfair Display",serif;font-weight:500}.hero h1,.page-her
 		contactPage.id = 'contact';
 		contactPage.className = 'page';
 		contactPage.innerHTML = '<div class="page-hero"><p class="eyebrow">WE ARE HERE TO HELP</p><h1>Contact <em>us.</em></h1><p>Visit Bilal Shoes in North Karachi or get in touch on WhatsApp.</p></div><section class="section contact-layout"><div class="contact-info"><p class="eyebrow">VISIT OUR STORE</p><h2>Find us in <em>Karachi.</em></h2><div class="contact-item"><span>ADDRESS</span><p>Anarkali Flate, Nagan Chowrangi, North Karachi</p></div><div class="contact-item"><span>PHONE / WHATSAPP</span><p><a href="https://wa.me/923142970073" target="_blank" rel="noopener noreferrer">+92 314 2970073</a></p></div><div class="contact-item"><span>EMAIL</span><p class="muted">Coming soon</p></div></div><div><p class="eyebrow">BILAL SHOES</p><h2>We would be glad to help you find your fit.</h2><p class="muted">For product availability and sizing, message us on WhatsApp.</p><a class="btn" href="https://wa.me/923142970073" target="_blank" rel="noopener noreferrer">Message us on WhatsApp ↗</a></div></section><div class="map"><iframe src="https://maps.google.com/maps?q=Anarkali%20Flate%2C%20Nagan%20Chowrangi%2C%20North%20Karachi&z=15&output=embed" title="Bilal Shoes location at Anarkali Flate, Nagan Chowrangi, North Karachi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>';
+		const shopMapUrl = 'https://maps.app.goo.gl/e9SaaL7pMhWwBws66';
+		const address = contactPage.querySelector('.contact-item p');
+		address.innerHTML = '<a href="' + shopMapUrl + '" target="_blank" rel="noopener noreferrer">Anarkali Flate, Nagan Chowrangi, North Karachi ↗</a>';
+		contactPage.querySelector('.map iframe').src = 'https://maps.google.com/maps?q=24.965940%2C67.069504&z=17&output=embed';
 		const email = contactPage.querySelector('.contact-item p.muted');
 		email.classList.remove('muted');
 		email.innerHTML = '<a href="mailto:hghouri414@gmail.com">hghouri414@gmail.com</a>';
